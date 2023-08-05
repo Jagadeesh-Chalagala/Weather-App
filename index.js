@@ -35,9 +35,6 @@ addCityBtn.addEventListener("click", () => {
 
 async function getCitiesWeather() {
 
-   
-
-
   let CITY_NAME = inputText;
   let API_KEY = "b7dc21448211c6a3e4584491c39eb68d";
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${CITY_NAME}&appid=${API_KEY}&units=metric`;
@@ -54,15 +51,7 @@ async function getCitiesWeather() {
   let windSpeed = requiredData.wind.speed;
   let winddeg = requiredData.wind.deg;
   let condition = requiredData.weather[0].description;
-
-  let weatherIcon = condition.toLowerCase().includes("cloud") ? "Moon cloud mid rain" : (
-                    condition.toLowerCase().includes("sun")?"Sun cloud angled rain" : (
-                    condition.toLowerCase().includes("rain")? "Moon cloud mid rain":(
-                    condition.toLowerCase().includes("haze")?"Moon cloud fast wind":(
-                    condition.toLowerCase().includes("clear")?"Moon cloud fast wind":"Tornado")
-                    )
-                    )
-                    )
+  let weatherIcon = requiredData.weather[0].icon;
 
 
   console.log(requiredData);
@@ -92,7 +81,7 @@ async function getCitiesWeather() {
                 </div>
                 <div class="card-right">
                     <div class="weather-icon">
-                        <img src="./images/${weatherIcon}.png" alt="">
+                         <img src="http://openweathermap.org/img/w/${weatherIcon}.png" alt="">
                     </div>
                     <div class="condition">
                         ${condition}
