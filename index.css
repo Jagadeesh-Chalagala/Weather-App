@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Roboto:wght@400;500;700;900&display=swap');
+
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #1f1f39;
+    color: whitesmoke;
+    font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    margin: 20px 0;
+}
+header h1{
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    padding: 0 20px;
+    height: 60px;
+}
+nav .search{
+    border: 1px solid rgb(12, 11, 37);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    box-shadow: -3px -4px 3px rgb(12, 16, 46);
+    width: 60%;
+}
+nav .search:hover{
+
+    transform: scaleY(1.05);
+}
+
+/* nav .search:{
+    border-color: rgb(10, 8, 66);
+} */
+nav span{
+    font-size: small;
+    padding-left: 10px;
+}
+nav input{
+    width: 100%;
+    padding: 20px 10px;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    color: aliceblue;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+nav button{
+    width: 150px;
+    background: #403571;
+    border-radius: 30px;
+    /* text-shadow: #271f4d; */
+    border: none;
+    color: aliceblue;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+nav button:hover{
+    border: 1px solid white;
+    color: rgb(222, 222, 208)smoke;
+    transform: scale(1.05);
+}
+
+
+/* Body css */
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.card-container{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-left: 5%;
+}
+
+.card{
+    display: flex;
+    padding: 10px 10px 40px 20px;
+    background-color: #332954;
+    border-radius: 20px;
+    width: 20%;
+    margin: 20px ;
+    box-shadow: 3px 2px 1px rgb(41, 15, 64);
+    /* transform: 5s; */
+    /* flex:1 */
+}
+.card:hover{
+    transform: scale(1.1) ;
+    background-color: #3e2f6e;
+}
+
+.card-left{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    gap:5%;
+}
+.card-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 10px;
+    width: 50%;
+}
+.weather-icon{
+    text-align: end;
+}
+.weather-icon img{
+    width: 100%;
+    object-fit: fill;
+}
+.card-right .condition{
+    text-align: end;
+    padding-right: 10px;
+    text-transform: capitalize;
+}
+
+
+.temperature{
+    font-size: 48px;
+    margin: 12px 0;
+}
+
+.wind{
+    margin: 10px 0;
+}
+.city{
+    
+}
+
+.temp-levels{
+    font-size: 12px;
+    color: rgba(198, 197, 197, 0.947);
+}
+
+.hp-levels{
+    margin: 10px 0;
+    font-size: 16px;
+    color: aliceblue;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* responsiveness */
+
+
+@media (max-width : 1941px) {
+    .card{
+        width: 25%;
+    }
+}
+@media (max-width : 1378px) {
+    .card{
+        width: 40%;
+    }
+}
+@media (max-width : 950px) {
+    .card{
+        width: 100%;
+    }
+}
