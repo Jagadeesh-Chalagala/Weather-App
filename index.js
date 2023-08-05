@@ -1,17 +1,11 @@
-// function
-
+// reference elements
 let searchInput = document.getElementById("search-input");
 let addCityBtn = document.getElementById("btn");
 let cardContainer = document.getElementsByClassName("card-container")[0];
-let cityNamesObject = {};
-let helperCityNamesObject = {};
 let inputText = "";
 
-let searchedCities = [];
+const searchedCities = [];
 let temperatureObject = {};
-
-const setCities = new Set();
-const setCitiesAccordingToTemp = new Set();
 
 //event listeners
 searchInput.addEventListener("change", (e) => {
@@ -33,6 +27,7 @@ addCityBtn.addEventListener("click", () => {
   }
 });
 
+//functions
 async function getCitiesWeather() {
 
   let CITY_NAME = inputText;
@@ -53,8 +48,7 @@ async function getCitiesWeather() {
   let condition = requiredData.weather[0].description;
   let weatherIcon = requiredData.weather[0].icon;
 
-
-  console.log(requiredData);
+  //card
   let card = document.createElement("div");
   card.className = "card";
   card.innerHTML = `
@@ -88,11 +82,9 @@ async function getCitiesWeather() {
                     </div>
                 </div>
   `
-
+  // filtering
   temperatureObject = {...temperatureObject , [temperature] : card}
   let list = [...Object.keys(temperatureObject)].sort();
-
-  console.log(list);
   list.forEach((item)=> {
     cardContainer.appendChild(temperatureObject[item]);
   })
